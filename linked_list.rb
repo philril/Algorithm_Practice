@@ -1,20 +1,30 @@
 # Implement a linked list (with insert and delete functions)
 
-class Node
+## STARTED, HAVEN'T FINISHED
 
-  def initialize(parent, left, right)
-    @parent = parent
-    @left = left ||= nil
-    @right = right ||= nil
+class Node
+  attr_accessor :data, :left, :right
+
+  def initialize(data)
+    @data = data
   end
 
-  def print_tree(root)
-    root.
+  def print_list_forward
+    node = self
+    return if node == nil
+    node.print_list_forward
+    puts node.right.data
+  end
 
+  def insert(data)
+    self.right = Node.new(data)
   end
 
 end
 
-root = Node.new(root, nil, nil)
+class LinkedList
 
-p root
+
+
+end
+# 5.times {|i| Node.new(i).insert(i+1); }

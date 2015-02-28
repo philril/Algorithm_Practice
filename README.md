@@ -1,1 +1,1 @@
-A collection of algorithms that I am working on as practice
+A collection of practice algorithms I've done and some I'm working on.
