@@ -1,7 +1,6 @@
 # Find if sentences are anagrams of one another
 ## REFACTOR
 
-
 def anagram(*mult_strings)
   arr_of_hashes = hashify(*mult_strings) # return arr of
   sorted_hashes = sort_hash(arr_of_hashes)
@@ -50,4 +49,4 @@ def sort_hash(arr_of_hashes)
   new_hash_arr
 end
 
-p anagram('Eleven plus two!', 'Twelve plus one!', 'elewvt sulp eno!')
+p anagram('Eleven plus two!', 'Twelve plus one!', 'elewvt sulp eno!') == true

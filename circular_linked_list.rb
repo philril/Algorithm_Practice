@@ -26,8 +26,11 @@ class LinkedList
 
   def print_all
     length = 1
-    node = @head
-    while node.pointer != nil
+    p @tail
+    p @tail.data
+
+    node = @tail
+    while node.pointer != @tail
       node = node.pointer
       puts node, node.data
       length += 1
@@ -50,3 +53,6 @@ list.insert(node3)
 
 p list.head.data == 3
 p list.tail.data == 1
+
+puts
+list.print_all

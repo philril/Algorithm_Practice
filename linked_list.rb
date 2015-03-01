@@ -18,12 +18,12 @@ class LinkedList
     @head = head
   end
 
-  def insert(node) # at start
+  def insert(node) # always at start
     node.pointer = @head
     @head = node
   end
 
-  def remove # at start
+  def remove # always at start
     @head = @head.pointer if @head != nil
   end
 
@@ -86,16 +86,17 @@ class LinkedList
 
 end
 
-# Make linked list
-i = 1
-list = LinkedList.new(Node.new(1))
-i += 1
-
-while i <= 20
-  list.insert(Node.new(i))
+# Make linked list:
+  i = 1
+  list = LinkedList.new(Node.new(i))
   i += 1
-end
 
+  while i <= 20
+    list.insert(Node.new(i))
+    i += 1
+  end
+
+# TEST
 p list.length == 20
 p list.mid == 10
 p list.find_data_at_index(3) == 17
