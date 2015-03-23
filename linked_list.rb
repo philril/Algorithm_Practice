@@ -70,6 +70,23 @@ class LinkedList
     return current_index
   end
 
+  def insert_at_index(node_to_insert, index_to_add)
+    current_index = 0
+    node = @head
+    while node.pointer != nil
+      if current_index + 1 == index_to_add
+        node_to_insert.pointer = node.pointer
+        node.pointer = node_to_insert
+      ## keep goin over list
+        current_index += 1
+        node = node.pointer
+      else
+        current_index += 1
+        node = node.pointer
+      end
+    end
+  end
+
   def delete_at_index(index_to_delete)
     current_index = 0
     node = @head
@@ -102,5 +119,7 @@ p list.mid == 10
 p list.find_data_at_index(3) == 17
 p list.delete_at_index(6) == 15
 p list.length == 19
+list.insert_at_index(Node.new(5), 3)
+p list.length == 20
 
 
