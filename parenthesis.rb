@@ -13,9 +13,17 @@ def parenthesis(input_string, num)
   end
 
   index = open_parens.index(num)
-  return close_parens[(-1)-index]
+
+  if index == nil
+    return "no match"
+  else
+    return close_parens[(-1)-index]
+  end
 
 end
 
 string = "Sometimes (when I nest them (my parentheticals) too much (like this (and this))) they get confusing."
-p parenthesis(string, 10)
+p parenthesis(string, 10) == 79
+
+string2 = "(where are my(parentesis?))"
+p parenthesis(string2, 13) == 25

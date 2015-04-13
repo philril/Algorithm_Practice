@@ -9,16 +9,17 @@ def shortest_path(arr)
   paths = arr[num_of_nodes+1, arr.length-1]
   possible_paths = []
 
-  num_of_nodes.times do
-    possible_paths << [start]
-  end
+  # nodes.length.times do
+  #   possible_paths << [start]
+  # end
 
-  counter = 0
-    while counter < num_of_nodes
-      comparison = possible_paths[counter][counter] + "-" + nodes[counter+1]
-
-      counter += 1
+  nodes.each do |first_node|
+    nodes.each do |second_node|
+      if paths.any?{|path|path == first_node + "-" + second_node}
+        p first_node+"-"+second_node
+      end
     end
+  end
 
   possible_paths
 end

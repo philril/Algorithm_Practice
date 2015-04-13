@@ -4,4 +4,4 @@ def factorial(num)
   return num * factorial(num - 1)
 end
 
-p factorial(0)
+p factorial(5)
