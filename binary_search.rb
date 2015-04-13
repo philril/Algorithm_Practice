@@ -3,14 +3,10 @@
 def binary_search(search_num, search_data, low = 0, high = search_data.length - 1)
   mid = (low+high)/2.to_i
   case
-    when high < low
-      return nil
-    when search_data[mid] > search_num
-      high = mid - 1
-    when search_data[mid] < search_num
-      low = mid + 1
-    else
-      return mid
+    when high < low then return nil
+    when search_data[mid] > search_num then high = mid - 1
+    when search_data[mid] < search_num then low = mid + 1
+    else return mid
   end
   binary_search(search_num, search_data, low, high)
 end

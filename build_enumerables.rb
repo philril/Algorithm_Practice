@@ -1,6 +1,4 @@
-# map
-
-
+# Rewrite Ruby's map function
 
 # arr.map! do |i|
 #   i+5

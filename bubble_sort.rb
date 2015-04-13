@@ -1,7 +1,8 @@
 # iterate through array and put two adjacent elements in descending order
 
 def bubble(arr)
-  loop do
+  swap = true
+  while swap == true
     i = 0
     swap = false
       while i <= arr.length - 2
@@ -11,7 +12,6 @@ def bubble(arr)
         end
         i += 1
       end
-    break if swap == false
   end
   arr
 end
