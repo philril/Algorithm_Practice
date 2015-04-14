@@ -28,6 +28,7 @@ class Tree
     end
   end
 
+#Breadth first
   def is_value_present?(node, value)
     if node == nil || node.left == nil || node.right == nil
       return false
@@ -36,6 +37,19 @@ class Tree
     else
       is_value_present?(node.left, value)
       is_value_present?(node.right, value)
+    end
+  end
+
+  def delete_node(node)
+    if node.left == nil && node.right == nil # Leaf node
+      # Delete process:
+      node.parent == nil
+      if node.parent.left == node
+        node.left == nil
+      elsif node.parent.right == node
+        node.right == nil
+      end
+    elsif node
     end
   end
 

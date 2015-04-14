@@ -14,8 +14,9 @@ end
 class LinkedList
   attr_accessor :head, :tail
 
-  def initialize(head = nil)
-    @head = head
+  def initialize(node)
+    @head = node
+    @tail = node
   end
 
   def insert(node) # always at start
@@ -42,7 +43,7 @@ class LinkedList
     node = @head
     while node.pointer != nil
       node = node.pointer
-      puts node, node.data
+      p node
       length += 1
     end
   end
@@ -101,6 +102,17 @@ class LinkedList
     end
   end
 
+  def reverse(node = @head, previous_node = nil)
+    @tail = node
+    while node != nil
+      next_node = node.pointer
+      node.pointer = previous_node
+      previous_node = node
+      node = next_node
+    end
+    @head = previous_node
+  end
+
 end
 
 # Make linked list:
@@ -121,5 +133,10 @@ p list.delete_at_index(6) == 15
 p list.length == 19
 list.insert_at_index(Node.new(5), 3)
 p list.length == 20
+p list.head.data == 20
+p list.tail.data == 1
+list.reverse
+p list.head.data == 1
+p list.tail.data == 20
 
 
