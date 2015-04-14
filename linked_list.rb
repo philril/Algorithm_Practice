@@ -105,8 +105,10 @@ class LinkedList
   def reverse(node = @head, previous_node = nil)
     @tail = node
     while node != nil
+      # Reassign pointer:
       next_node = node.pointer
       node.pointer = previous_node
+      # Advance to next node:
       previous_node = node
       node = next_node
     end
@@ -138,5 +140,3 @@ p list.tail.data == 1
 list.reverse
 p list.head.data == 1
 p list.tail.data == 20
-
-
